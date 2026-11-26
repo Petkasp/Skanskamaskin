@@ -1,3 +1,29 @@
-Skanskamaskin
-Ingen maskin valgt
-Dette er en testside for QR-basert maskindokumentasjon
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skanskamaskin</title>
+</head>
+
+<body>
+  <h1>Skanskamaskin</h1>
+
+  <h2 id="maskin">Laster maskinnummer...</h2>
+
+  <p>Dette er en testside for QR-basert maskindokumentasjon.</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const maskinnummer = params.get("id");   
+
+    if (maskinnummer) {
+      document.getElementById("maskin").textContent =
+        "Maskinnummer: " + maskinnummer;        
+        } else {
+            document.getElementById("maskin").textContent =
+        "Ingen maskin valgt";      
+          }
+      </script>
+</body>     
+</html>
